@@ -1,0 +1,8 @@
+Package: geomsquare
+Version: 0.1
+Date: 8/27/2014
+Title: Package geomsquare
+Description: Plot square of given dimension at given centroid
+Author: Shravan Karthik <shravan.karthik@nus.edu.sg>
+Maintainer: Shravan Karthik <shravan.karthik@nus.edu.sg>
+RoxygenNote: 5.0.1

@@ -1,0 +1,46 @@
+---
+title: "Chart depicting relationship between happiness and marital status"
+output: html_document
+---
+
+The chart below describes the relationship between happiness among the sexes based on the marital status. Based on values from the ***happy***  dataset, the attribute *happy*, *sex* and *marital* are selected and fed to the **prodplot** function.  To establish the relationship between the three attributes, we use a combination of the horizontal and vertical spines as dividers to the plot.
+
+Initially the attribute *marital* is distributed along the width of the graph using **hspine** as the divider. From this plot, one can conclude a large portion of the people surveyed are married.
+
+```{r Marital Distribution, echo = F, warning = F, message = F}
+if(!require('productplots')) {install.packages('productplots')}
+happynew = happy[complete.cases(happy[,]),]
+chart = prodplot(happynew,~marital,"hspine") 
+chart = chart + scale_y_continuous(breaks = c(), labels = c())
+chart = chart + theme(axis.title = element_blank())
+chart
+```
+
+Each marital status is further split based on the sex by using a horizontal spine to represent the split.  Thus, the rectangle representing the marital status is split into two, representing male and female respectively. 
+
+```{r Marital, Sex distribution, echo = F, warning = F, message = F}
+chart = prodplot(happynew,~ sex + marital,c("hspine","hspine"))  
+xaxisbreaks = c(0)
+xaxisbreaks[2:(length(chart$data$r)+1)] = chart$data$r
+xaxisbreaks = (xaxisbreaks[-1] - xaxisbreaks[-length(xaxisbreaks)]) / 2 + xaxisbreaks[-length(xaxisbreaks)]
+chart = chart + scale_y_continuous(breaks = c(), labels = c())
+chart = chart + theme(axis.title = element_blank())
+chart = chart + scale_x_continuous(labels = c("MM","FM","MNM","FNM","MD","FD","MW","FW","MS","FS"),breaks = xaxisbreaks)
+chart
+```
+
+To determine the happiness of the sexes based on marital status we perform vertical split on each bin. Each bin is now filled with a different color which represents how happy the group is. The plot indicates that for all levels of marital status, men are generally less happier than women.
+
+```{r Prodplot example, echo = F, warning=FALSE,  message=FALSE}
+chart =  prodplot(happynew,~happy + sex + marital,c("vspine","hspine","hspine"))
+chart = chart + aes(fill = happy)
+xaxisbreaks = c(0)
+xaxisbreaks[2:(length(chart$data$r)+1)] = chart$data$r
+xaxisbreaks = (xaxisbreaks[-1] - xaxisbreaks[-length(xaxisbreaks)])/2 + xaxisbreaks[-length(xaxisbreaks)]
+chart = chart + scale_x_continuous(labels = c("married","never married","divorce","widowed","seperated"),breaks = c(0.25,0.65,0.8,0.88,0.98)) 
+chart = chart + scale_y_continuous(labels = c(" "," "," "),breaks = c(0.05,0.4,0.8))
+chart = chart + theme(legend.position = "bottom", legend.title = element_blank())
+chart = chart + ylab(" ")
+chart
+```
+
