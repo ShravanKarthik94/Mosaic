@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://127.0.0.1:7632/Prodplot.rmd -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="application/shiny-singletons"></script>  <script type="application/html-dependencies">json2[2014.02.04];jquery[1.11.3];shiny[0.13.1]</script><script src="./Chart depicting relationship between happiness and marital status_files/json2-min.js"></script>
+<script src="./Chart depicting relationship between happiness and marital status_files/jquery.min.js"></script>
+<link href="./Chart depicting relationship between happiness and marital status_files/shiny.css" rel="stylesheet">
+<script src="./Chart depicting relationship between happiness and marital status_files/shiny.min.js"></script>  <script src="./Chart depicting relationship between happiness and marital status_files/rmd_loader.js"></script>
+  <link href="./Chart depicting relationship between happiness and marital status_files/rmd_loader.css" rel="stylesheet">
+
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="pandoc">
+
+
+
+<title>Chart depicting relationship between happiness and marital status</title>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="./Chart depicting relationship between happiness and marital status_files/default.css" type="text/css">
+<script src="./Chart depicting relationship between happiness and marital status_files/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<script type="text/javascript" src="./Chart depicting relationship between happiness and marital status_files/MathJax.js"></script></head>
+
+<body>
+  <div>
+    <div data-display-if="!output.__reactivedoc__" style="display: none;">
+      <div id="rmd_loader_wrapper">
+        <div id="rmd_loader">
+          <img src="./Chart depicting relationship between happiness and marital status_files/rmd_loader.gif">
+          <p>Loading</p>
+        </div>
+      </div>
+    </div>
+    <div id="__reactivedoc__" class="shiny-html-output shiny-bound-output">
+
+
+
+
+
+
+
+<style type="text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div id="header">
+<h1 class="title">Chart depicting relationship between happiness and marital status</h1>
+</div>
+
+
+<p>The chart below describes the relationship between happiness among the sexes based on the marital status. Based on values from the <strong><em>happy</em></strong> dataset, the attribute <em>happy</em>, <em>sex</em> and <em>marital</em> are selected and fed to the <strong>prodplot</strong> function. To establish the relationship between the three attributes, we use a combination of the horizontal and vertical spines as dividers to the plot.</p>
+<p>Initially the attribute <em>marital</em> is distributed along the width of the graph using <strong>hspine</strong> as the divider. From this plot, one can conclude a large portion of the people surveyed are married.</p>
+<p><img src="./Chart depicting relationship between happiness and marital status_files/e155d79466ecbc6bd8234a60366e1133.png" title="" alt="" width="672"></p>
+<p>Each marital status is further split based on the sex by using a horizontal spine to represent the split. Thus, the rectangle representing the marital status is split into two, representing male and female respectively.</p>
+<p><img src="./Chart depicting relationship between happiness and marital status_files/4d0437938ef0eb5f5e2cad27c2a8fe03.png" title="" alt="" width="672"></p>
+<p>To determine the happiness of the sexes based on marital status we perform vertical split on each bin. Each bin is now filled with a different color which represents how happy the group is. The plot indicates that for all levels of marital status, men are generally less happier than women.</p>
+<p><img src="./Chart depicting relationship between happiness and marital status_files/f1524c046ba18f450e27a837d938727c.png" title="" alt="" width="672"></p>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with --self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+</div>
+  </div>
+
+
+
+</body></html>
